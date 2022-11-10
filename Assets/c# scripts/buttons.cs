@@ -7,19 +7,21 @@ public class buttons : MonoBehaviour
 {
   public void restart_level()
     {
-        static_variable.checkpointtoload = 0;
+        level_2bossplayer.checkpoint = 0;
+        LevelEvents.checkpoint = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);   
     }
 
     public void MenuScreen()
     {
+       level_2bossplayer.checkpoint = 0;
+        LevelEvents.checkpoint = 0;
         SceneManager.LoadScene("Main Menu");
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 
     public static void respawn()
     {
-        static_variable.checkpointtoload = LevelEvents.checkpoint;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

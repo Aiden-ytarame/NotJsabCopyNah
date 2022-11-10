@@ -13,6 +13,7 @@ public class Main_Menu : MonoBehaviour
     {
         
         Time.timeScale = 1;
+        static_variable.checkpointtoload = 0;
     }
 
     public void LoadTutorial()

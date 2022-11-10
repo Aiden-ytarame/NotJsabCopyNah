@@ -12260,8 +12260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbf5d0da42e12445804911c75ed8add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
-  musicoffset: 0
+  value: 39
+  musicoffset: 118
 --- !u!114 &1836784784
 MonoBehaviour:
   m_ObjectHideFlags: 0

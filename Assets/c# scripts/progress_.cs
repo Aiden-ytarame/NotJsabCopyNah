@@ -13,7 +13,7 @@ public class progress_ : MonoBehaviour
         if (gameObject.transform.localPosition.x < 2350)
 
         {
-            gameObject.transform.localPosition = new Vector3(GameObject.Find("levelPlayer").GetComponent<AudioSource>().time * value, 0);
+            gameObject.transform.localPosition = new Vector3((GameObject.Find("levelPlayer").GetComponent<AudioSource>().time - musicoffset) * value, 0);
         }
         else
         {

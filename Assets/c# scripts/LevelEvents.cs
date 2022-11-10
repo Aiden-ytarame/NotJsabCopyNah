@@ -37,7 +37,6 @@ public class LevelEvents : MonoBehaviour
     
     private void Awake()
     {
-        checkpoint = static_variable.checkpointtoload;
         Time.timeScale = 0;
         time = 0;
         bullet = GameObject.Find("projectile");
