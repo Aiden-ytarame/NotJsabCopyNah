@@ -5700,7 +5700,7 @@ Transform:
   - {fileID: 910781979}
   m_Father: {fileID: 563364064}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -78.31201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -362.12286}
 --- !u!1 &143329938
 GameObject:
   m_ObjectHideFlags: 0
@@ -7396,7 +7396,7 @@ Transform:
   - {fileID: 140882262}
   m_Father: {fileID: 1819914948}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.4242039}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.313683}
 --- !u!1 &715903786
 GameObject:
   m_ObjectHideFlags: 0
@@ -10554,7 +10554,7 @@ Transform:
   - {fileID: 860984542}
   m_Father: {fileID: 563364064}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.7544417}
 --- !u!212 &1318389013
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13318,6 +13318,8 @@ MonoBehaviour:
   diference: 0
   wallAt: {fileID: 6333051568963650910, guid: 253e014c340c40a4a8f364d51486df4c, type: 3}
   bullet: {fileID: 788706471138229990, guid: 7bb0770c045a61947b76a274b973c6e3, type: 3}
+  spin_line: {fileID: 8261900336234142755, guid: a745b6cd037f7fe419768f91030909b5, type: 3}
+  dot: {fileID: 1101298680}
 --- !u!1 &1976245506
 GameObject:
   m_ObjectHideFlags: 0

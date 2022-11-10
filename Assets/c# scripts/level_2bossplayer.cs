@@ -10,13 +10,36 @@ public class level_2bossplayer : MonoBehaviour
     [SerializeField] public static int checkpoint;
 
     bool shoot = true;
+    bool randomdots = true;
     AudioSource check_audio;
     AudioSource music;
     Animation anim;
-
+    Transform spawnPos;
     Quaternion rot;
+
+    GameObject line;
     public GameObject wallAt;
     public GameObject bullet;
+    public GameObject spin_line;
+    public GameObject dot;
+
+    IEnumerator shoot_balls()
+    {
+        float angle = Random.value % 360;
+        Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
+
+       while(randomdots)
+        {
+            GameObject ball;
+            angle = Random.value * 360;
+            ball = GameObject.Instantiate(dot, spawnPos.position, spawnPos.rotation);
+            ball.GetComponent<Rigidbody2D>().AddForce(dir * 250);
+            dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
+            Destroy(ball, 4);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+    }
 
     void spawn_wall(float x = 0,float y = 0,float angle = 0)
     {
@@ -27,6 +50,7 @@ public class level_2bossplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnPos = GameObject.Find("bossbody").transform;
         check_audio = GetComponents<AudioSource>()[1];
         music = gameObject.GetComponent<AudioSource>();
         anim = GameObject.Find("bossanimation").GetComponent<Animation>();
@@ -36,6 +60,10 @@ public class level_2bossplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(line != null)
+        {
+            line.transform.position = spawnPos.position;
+        }
         timer = music.time;
         animtimer = anim["level2bossanim"].time;
         diference = timer - animtimer;
@@ -131,6 +159,24 @@ public class level_2bossplayer : MonoBehaviour
              
             yield return new WaitUntil(() => animtimer >= 33.52f);
             shoot = false;
+
+            yield return new WaitUntil(() => animtimer >= 34f);
+            StartCoroutine(shoot_balls());
+
+            yield return new WaitUntil(() => animtimer >= 37.9f);
+            randomdots = false;
+
+            yield return new WaitUntil(() => animtimer >= 38.55f);
+            shoot = true;
+            StartCoroutine(boss_shoot());
+
+            yield return new WaitUntil(() => animtimer >= 40.125f);
+            shoot = false;
+
+            yield return new WaitUntil(() => animtimer >= 40.3f);
+            line = Instantiate(spin_line,spawnPos.position,Quaternion.identity);
+            Destroy(line,4.75f);
+
         }
     }
 }
